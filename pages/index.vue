@@ -63,6 +63,14 @@ const colorMode = useColorMode()
           >
             Contact Me
           </a>
+          <!-- Download Resume/CV Button -->
+          <a
+            href="/Jonathan_Lee_CV_2024.pdf"
+            download
+            class="hidden md:inline-block bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-blue-600 transition"
+          >
+            Download CV/Resume
+          </a>
         </div>
       </div>
     </section>
