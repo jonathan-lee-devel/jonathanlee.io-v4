@@ -53,13 +53,16 @@ const colorMode = useColorMode()
           A passionate Software Engineer blending creativity and technology to build impactful
           solutions. I love working on open-source projects to continually enhance my skills.
         </p>
-        <div class="space-x-4">
-          <a href="#projects" class="rounded-lg bg-blue-500 px-6 py-3 text-white hover:bg-blue-600">
+        <div class="space-y-4 sm:space-x-4 sm:space-y-0 grid grid-cols-1 sm:grid-cols-3">
+          <a
+            href="#projects"
+            class="rounded-lg bg-blue-500 px-6 py-3 text-center text-white hover:bg-blue-600"
+          >
             View My Work
           </a>
           <a
             href="#contact"
-            class="rounded-lg border border-gray-300 px-6 py-3 hover:bg-gray-200 dark:border-gray-700 dark:hover:bg-gray-800"
+            class="rounded-lg border border-gray-300 px-6 py-3 text-center hover:bg-gray-200 dark:border-gray-700 dark:hover:bg-gray-800"
           >
             Contact Me
           </a>
@@ -67,7 +70,7 @@ const colorMode = useColorMode()
           <a
             href="/Jonathan_Lee_CV_2024.pdf"
             download
-            class="hidden md:inline-block bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-blue-600 transition"
+            class="rounded-lg bg-blue-500 px-6 py-3 text-center text-white hover:bg-blue-600"
           >
             Download CV/Resume
           </a>
