@@ -344,15 +344,6 @@ const colorMode = useColorMode()
               >
             </div>
 
-            <!-- Learn More -->
-            <a
-              href="https://docs.jenkify.com"
-              target="_blank"
-              class="mt-4 block text-blue-500 transition hover:underline"
-            >
-              Read the Docs (Currently under construction)
-            </a>
-
             <!-- GitHub Button -->
             <h3 class="pt-4 mt-4">This project is open-source, why not</h3>
             <a
