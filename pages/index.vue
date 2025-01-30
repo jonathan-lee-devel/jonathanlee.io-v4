@@ -51,7 +51,7 @@ const colorMode = useColorMode()
         </h2>
         <p class="text-lg text-gray-700 dark:text-gray-300 md:text-xl">
           A passionate Software Engineer blending creativity and technology to build impactful
-          solutions. I love working on open-source projects to continually enhance my skills.
+          solutions. I love working on open-source and closed-source personal projects to continually enhance my skills.
         </p>
         <div class="space-y-4 sm:space-x-4 sm:space-y-0 grid grid-cols-1 sm:grid-cols-3">
           <a
@@ -68,7 +68,7 @@ const colorMode = useColorMode()
           </a>
           <!-- Download Resume/CV Button -->
           <a
-            href="/Jonathan_Lee_CV_2024.pdf"
+            href="/Jonathan_Lee_CV_2025.pdf"
             download
             class="rounded-lg bg-blue-500 px-6 py-3 text-center text-white hover:bg-blue-600"
           >
@@ -86,10 +86,9 @@ const colorMode = useColorMode()
       <div class="container mx-auto max-w-4xl space-y-6 px-6">
         <h3 class="text-3xl font-semibold">About Me</h3>
         <p class="text-gray-700 dark:text-gray-300">
-          I'm a software engineer with a passion for developing not just functional but powerful and
-          user-oriented web applications. Through numerous open-source projects and my day-to-day
-          tasks, I’ve built strong expertise in modern frameworks, tools, and scalable software
-          architecture.
+          Passionate and experienced software engineer with developed teamwork, communication, and problem-solving skills.
+          A reliable and punctilious individual with a strong work ethic.
+          Proven capability of working and learning on my own initiative, very adaptable, and happy to work as part of a team as demonstrated by career progression from Undergraduate to Graduate to Software Engineer II while working for major international brands of 30,000-100,000+ employees and annual revenue in the range of $20B+.
         </p>
         <p class="text-gray-700 dark:text-gray-300">
           Whether working on frontend designs or backend challenges, I aim to make a difference by
@@ -114,7 +113,9 @@ const colorMode = useColorMode()
               <span class="mt-2 text-gray-500 dark:text-gray-400 sm:mt-0">Nov 2023 - Present</span>
             </div>
             <p class="mt-4 text-gray-700 dark:text-gray-300">
-              Worked on end-to-end development and maintenance of key business applications.
+              Operated within an Agile development process on Fidelity’s internal global intranet, serving all 80,000+ employees across the globe.
+              The application is built using a modern microservices architecture composed of 25 individual microservices.
+              The site acts as a global employee directory, source of informational news articles and company events, and more recently an internal search engine powered by ElasticSearch.
             </p>
 
             <!-- Responsive Tags -->
@@ -141,16 +142,13 @@ const colorMode = useColorMode()
 
             <ul class="mt-4 list-inside list-disc text-gray-700 dark:text-gray-300">
               <li>
-                Developed and deployed scalable web applications using Vue, Node.js, and
-                TailwindCSS.
+                Developed and deployed scalable web applications using Spring Boot and Java.
               </li>
               <li>
-                Optimized performance and reduced application load time by 30% through code
-                refactoring.
+                Followed strict guidelines to ensure code quality and minimal downtime.
               </li>
               <li>
-                Led a team of developers in building a RESTful API integrated with third-party
-                services.
+                Performed various upgrades of Spring Boot versions and Angular versions, key to ensuring security and stability.
               </li>
             </ul>
           </div>
@@ -158,11 +156,14 @@ const colorMode = useColorMode()
           <!-- Job 2 -->
           <div class="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800">
             <div class="flex flex-col items-start justify-between sm:flex-row sm:items-center">
-              <h4 class="text-xl font-semibold">Software Engineer II @ Mastercard</h4>
+              <h4 class="text-xl font-semibold">Software Engineer II @ MasterCard</h4>
               <span class="mt-2 text-gray-500 dark:text-gray-400 sm:mt-0">Jan 2023 - Nov 2023</span>
             </div>
             <p class="mt-4 text-gray-700 dark:text-gray-300">
-              Focused on creating intuitive UI/UX interfaces for customer-facing web apps.
+              Worked in an Agile development process on MasterCard’s business-to-business Smart Data solution.
+              A large Spring Boot application deployed using Apache Tomcat. Serving millions of monthly active customers globally.
+              Successfully implemented various pieces of functionality which underwent stringent testing from QA Engineers.
+              Managed the release of artifacts to live environments including Production.
             </p>
 
             <!-- Responsive Tags -->
@@ -180,14 +181,13 @@ const colorMode = useColorMode()
 
             <ul class="mt-4 list-inside list-disc text-gray-700 dark:text-gray-300">
               <li>
-                Collaborated with designers to translate wireframes into high-quality, responsive
-                interfaces.
+                Refactored legacy code to ensure code quality and minimal downtime.
               </li>
               <li>
-                Improved accessibility ratings by implementing WCAG standards in multiple projects.
+                Kept software up-to-date with latest secure clients for inter-company communication.
               </li>
               <li>
-                Refined complex financial dashboards using VueJS and d3.js for data visualization.
+                Participated in large release efforts, ensuring smooth and timely delivery of new features.
               </li>
             </ul>
           </div>
@@ -199,7 +199,8 @@ const colorMode = useColorMode()
               <span class="mt-2 text-gray-500 dark:text-gray-400 sm:mt-0">Nov 2021 - Jan 2023</span>
             </div>
             <p class="mt-4 text-gray-700 dark:text-gray-300">
-              Worked on creating intuitive UI/UX interfaces for customer-facing web apps.
+              Implemented various pieces of functionality in a resource pooling tool developed as a fully-featured web application using the MEAN stack, as well as a command-line interface developed in Python.
+              Worked alongside various other teams to build a software platform with a strong emphasis on reliability, reusability, and scalability.
             </p>
 
             <!-- Responsive Tags -->
@@ -226,14 +227,13 @@ const colorMode = useColorMode()
 
             <ul class="mt-4 list-inside list-disc text-gray-700 dark:text-gray-300">
               <li>
-                Collaborated with designers to translate wireframes into high-quality, responsive
-                interfaces.
+                Introduced end-to-end testing using Cypress to ensure quality and reliability.
               </li>
               <li>
-                Improved accessibility ratings by implementing WCAG standards in multiple projects.
+                Refined internal dashboard using Angular Material and dynamic data visualization.
               </li>
               <li>
-                Refined complex financial dashboards using VueJS and d3.js for data visualization.
+                Implemented new feature using MongoDB features such as Aggregation Pipelines, and enhanced queries.
               </li>
             </ul>
           </div>
@@ -244,7 +244,7 @@ const colorMode = useColorMode()
     <!-- Projects Section -->
     <section id="projects" class="bg-gray-100 py-20 dark:bg-gray-900">
       <div class="container mx-auto space-y-6 px-6">
-        <h3 class="text-center text-3xl font-semibold">Open-Source Projects</h3>
+        <h3 class="text-center text-3xl font-semibold">Personal Projects</h3>
         <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <!-- Project Card -->
           <div
@@ -252,8 +252,7 @@ const colorMode = useColorMode()
           >
             <h4 class="text-xl font-semibold">www.RoomyLedger.com</h4>
             <p class="mt-2 text-gray-700 dark:text-gray-300">
-              A description of the project that showcases its innovative use of technology and
-              value.
+              A personal finance application for people living in shared accommodation.
             </p>
 
             <!-- Tags -->
@@ -268,16 +267,6 @@ const colorMode = useColorMode()
                 >Angular</span
               >
             </div>
-
-            <!-- GitHub Button -->
-            <a
-              href="https://github.com/jonathan-lee-devel/roomyledger"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-6 inline-block rounded-lg bg-blue-500 px-4 py-2 text-white transition hover:bg-blue-600"
-            >
-              ⭐ Give it a Star
-            </a>
 
             <!-- Learn More -->
             <a
@@ -287,6 +276,17 @@ const colorMode = useColorMode()
             >
               Visit Site
             </a>
+
+            <!-- GitHub Button -->
+            <h3 class="pt-4 mt-4">This project is open-source, why not</h3>
+            <a
+              href="https://github.com/jonathan-lee-devel/roomyledger"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-6 inline-block rounded-lg bg-blue-500 px-4 py-2 text-white transition hover:bg-blue-600"
+            >
+              ⭐ Give it a Star
+            </a>
           </div>
 
           <!-- Repeat Project Cards -->
@@ -295,7 +295,7 @@ const colorMode = useColorMode()
           >
             <h4 class="text-xl font-semibold">www.Kavindra.io</h4>
             <p class="mt-2 text-gray-700 dark:text-gray-300">
-              An exceptional open-source contribution aimed at improving developer workflows.
+              An all-in-one feedback platform for your own website. Embeddable feedback widget that works with any website.
             </p>
 
             <!-- Tags -->
@@ -311,16 +311,6 @@ const colorMode = useColorMode()
               >
             </div>
 
-            <!-- GitHub Button -->
-            <a
-              href="https://github.com/jonathanlee-io/kavindra"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-6 inline-block rounded-lg bg-blue-500 px-4 py-2 text-white transition hover:bg-blue-600"
-            >
-              ⭐ Give it a Star
-            </a>
-
             <!-- Learn More -->
             <a
               href="https://www.kavindra.io"
@@ -329,6 +319,8 @@ const colorMode = useColorMode()
             >
               Visit Site
             </a>
+
+            <h3 class="pt-4 mt-4">This project is closed-source, hence, no GitHub link</h3>
           </div>
 
           <div
@@ -336,7 +328,7 @@ const colorMode = useColorMode()
           >
             <h4 class="text-xl font-semibold">Jenkify</h4>
             <p class="mt-2 text-gray-700 dark:text-gray-300">
-              Another amazing project that solves problems in innovative ways.
+              A dockerized CLI tool for orchestrating Jenkins pipelines.
             </p>
 
             <!-- Tags -->
@@ -352,7 +344,17 @@ const colorMode = useColorMode()
               >
             </div>
 
+            <!-- Learn More -->
+            <a
+              href="https://docs.jenkify.com"
+              target="_blank"
+              class="mt-4 block text-blue-500 transition hover:underline"
+            >
+              Read the Docs (Currently under construction)
+            </a>
+
             <!-- GitHub Button -->
+            <h3 class="pt-4 mt-4">This project is open-source, why not</h3>
             <a
               href="https://github.com/jonathan-lee-devel/jenkify-v2"
               target="_blank"
@@ -360,15 +362,6 @@ const colorMode = useColorMode()
               class="mt-6 inline-block rounded-lg bg-blue-500 px-4 py-2 text-white transition hover:bg-blue-600"
             >
               ⭐ Give it a Star
-            </a>
-
-            <!-- Learn More -->
-            <a
-              href="https://docs.jenkify.com"
-              target="_blank"
-              class="mt-4 block text-blue-500 transition hover:underline"
-            >
-              Read Docs
             </a>
           </div>
         </div>
@@ -385,7 +378,7 @@ const colorMode = useColorMode()
         </p>
         <div class="mt-6 flex justify-center space-x-6">
           <a
-            href="https://linkedin.com/in/your-linkedin-profile"
+            href="https://linkedin.com/in/jonathan-lee-devel"
             target="_blank"
             rel="noopener noreferrer"
             class="flex items-center space-x-2 text-blue-500 hover:text-blue-600"
@@ -403,23 +396,7 @@ const colorMode = useColorMode()
             <span>LinkedIn</span>
           </a>
           <a
-            href="mailto:your-email@example.com"
-            class="flex items-center space-x-2 text-blue-500 hover:text-blue-600"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 12.713l11.985-7.713h-23.97l11.985 7.713zm12-9.713h-24c-1.104 0-2 .896-2 2v16c0 1.104.896 2 2 2h24c1.104 0 2-.896 2-2v-16c0-1.104-.896-2-2-2zm-14.697 11.285l-9.303-6.285v12h18v-12l-9.303 6.285c-.568.384-1.129.384-1.697 0z"
-              />
-            </svg>
-            <span>Email</span>
-          </a>
-          <a
-            href="https://github.com/your-github-profile"
+            href="https://github.com/jonathan-lee-devel"
             target="_blank"
             rel="noopener noreferrer"
             class="flex items-center space-x-2 text-blue-500 hover:text-blue-600"
