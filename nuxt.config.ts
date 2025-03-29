@@ -11,6 +11,14 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
   ],
 
+  app: {
+    head: {
+      script: [
+        { src: "https://jonathanlee-io-v4.api.echonexus.io/v1/scripts/feedback-widget.js", defer: true, async: true },
+      ]
+    }
+  },
+
   tailwindcss: {
     exposeConfig: true,
     editorSupport: true,
