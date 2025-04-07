@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       script: [
-        { src: "https://jonathanlee.api.echonexus.io/v1/scripts/feedback-widget.js", defer: true, async: true },
+        { src: "https://jonathanlee-v4.api.echonexus.io/v1/scripts/feedback-widget.js", defer: true, async: true },
       ]
     }
   },
