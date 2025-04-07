@@ -237,6 +237,49 @@ const colorMode = useColorMode()
               </li>
             </ul>
           </div>
+
+          <!-- Job 4 -->
+          <div class="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800">
+            <div class="flex flex-col items-start justify-between sm:flex-row sm:items-center">
+              <h4 class="text-xl font-semibold">Undergraduate Software Developer @ Jaguar Land Rover</h4>
+              <span class="mt-2 text-gray-500 dark:text-gray-400 sm:mt-0">Jan 2020 - Sep 2020</span>
+            </div>
+            <p class="mt-4 text-gray-700 dark:text-gray-300">
+              Worked alongside teams based in Ireland and England to build a software platform with a strong emphasis on reliability, reusability, and scalability.
+              Worked on a B2B Spring Boot project deployed to a Kubernetes cluster on Google Cloud Platform.
+            </p>
+
+            <!-- Responsive Tags -->
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-lg bg-green-100 px-3 py-1 text-sm font-medium text-green-600"
+              >Backend</span
+              >
+              <span class="rounded-lg bg-blue-100 px-3 py-1 text-sm font-medium text-blue-600"
+              >Kubernetes</span
+              >
+              <span class="rounded-lg bg-red-200 px-3 py-1 text-sm font-medium text-red-600"
+              >Java</span
+              >
+              <span class="rounded-lg bg-yellow-200 px-3 py-1 text-sm font-medium text-yellow-600"
+              >Python</span
+              >
+              <span class="rounded-lg bg-cyan-200 px-3 py-1 text-sm font-medium text-cyan-600"
+              >JavaScript</span
+              >
+            </div>
+
+            <ul class="mt-4 list-inside list-disc text-gray-700 dark:text-gray-300">
+              <li>
+                Implemented various components of the software platform including Controllers, Services, and Repositories.
+              </li>
+              <li>
+                Created a helper script to automate the generation of REST API documentation for the 200+ endpoints.
+              </li>
+              <li>
+                Worked on a separate in-house solution deployed to a vehicles on-board computer for learning purposes.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -293,7 +336,7 @@ const colorMode = useColorMode()
           <div
             class="transform rounded-lg bg-white p-6 shadow-lg transition hover:-translate-y-2 dark:bg-gray-800"
           >
-            <h4 class="text-xl font-semibold">www.Kavindra.io</h4>
+            <h4 class="text-xl font-semibold">www.EchoNexus.io</h4>
             <p class="mt-2 text-gray-700 dark:text-gray-300">
               An all-in-one feedback platform for your own website. Embeddable feedback widget that works with any website.
             </p>
@@ -313,7 +356,7 @@ const colorMode = useColorMode()
 
             <!-- Learn More -->
             <a
-              href="https://www.kavindra.io"
+              href="https://www.echonexus.io"
               target="_blank"
               class="mt-4 block text-blue-500 transition hover:underline"
             >
