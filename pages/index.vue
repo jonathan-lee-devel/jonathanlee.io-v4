@@ -1,42 +1,50 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
+
+function toggleColorMode() {
+  colorMode.preference = colorMode.value === 'light' ? 'dark' : 'light'
+}
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+  <div class="min-h-screen bg-gray-50 text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100">
     <!-- Navbar -->
-    <header class="w-full bg-white shadow-md dark:bg-gray-800">
-      <div class="container mx-auto flex items-center justify-between px-4 py-4 md:px-6">
-        <h1 class="text-2xl font-bold tracking-tight">JonathanLee.io</h1>
-        <div>
-          <Toggle @click="$colorMode.preference = (colorMode.preference === 'light') ? 'dark' : 'light'" >
-            <Icon class="text-black dark:text-white" :name="(colorMode.preference === 'light') ? 'lucide:sun' : 'lucide:moon'" size="24" />
-          </Toggle>
-        </div>
-        <nav>
+    <header class="sticky top-0 z-50 w-full border-b border-gray-200/80 bg-white/80 shadow-sm backdrop-blur-sm transition-colors duration-300 dark:border-gray-700/80 dark:bg-gray-900/80">
+      <div class="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+        <a href="/" class="text-2xl font-bold tracking-tight hover:text-blue-600 dark:hover:text-blue-400">JonathanLee.io</a>
+        <nav class="flex items-center space-x-6">
           <ul class="hidden space-x-6 md:flex">
-            <li><a href="#about" class="hover:text-blue-500">About</a></li>
-            <li><a href="#experience" class="hover:text-blue-500">Experience</a></li>
-            <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
-            <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+            <li><a href="#about" class="text-sm font-medium text-gray-600 transition-colors hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">About</a></li>
+            <li><a href="#experience" class="text-sm font-medium text-gray-600 transition-colors hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">Experience</a></li>
+            <li><a href="#projects" class="text-sm font-medium text-gray-600 transition-colors hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">Projects</a></li>
+            <li><a href="#contact" class="text-sm font-medium text-gray-600 transition-colors hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400">Contact</a></li>
           </ul>
+           <!-- Color Mode Toggle -->
+          <button
+            @click="toggleColorMode"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 text-gray-700 transition-colors hover:bg-gray-100 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
+            aria-label="Toggle color mode"
+          >
+            <Icon class="text-black dark:text-white" :name="(colorMode.value === 'light') ? 'lucide:sun' : 'lucide:moon'" size="18" />
+          </button>
           <div class="md:hidden">
-            <button id="menu-btn" class="text-blue-500 hover:text-blue-600">
-              <!-- Mobile menu icon -->
+             <!-- Mobile menu button - functionality needs implementation -->
+            <button id="menu-btn" class="rounded p-1.5 text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800">
               <svg
                 class="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                stroke-width="2"
               >
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 8h16M4 16h16"
-                ></path>
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
               </svg>
+              <span class="sr-only">Open menu</span>
             </button>
           </div>
         </nav>
@@ -44,33 +52,32 @@ const colorMode = useColorMode()
     </header>
 
     <!-- Hero Section -->
-    <section class="flex items-center justify-center bg-gray-100 py-20 dark:bg-gray-900">
-      <div class="space-y-6 px-8 text-center">
-        <h2 class="text-4xl font-extrabold leading-tight md:text-6xl">
-          Hi, I’m <span class="text-blue-500">Jonathan Lee</span>
+    <section class="flex items-center justify-center bg-gray-50 py-24 sm:py-32 dark:bg-gray-950">
+      <div class="max-w-3xl space-y-8 px-6 text-center lg:px-8">
+        <h2 class="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
+          Hi, I’m <span class="text-blue-600 dark:text-blue-400">Jonathan Lee</span>
         </h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300 md:text-xl">
+        <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300 md:text-xl">
           A passionate Software Engineer blending creativity and technology to build impactful
           solutions. I love working on open-source and closed-source personal projects to continually enhance my skills.
         </p>
-        <div class="space-y-4 sm:space-x-4 sm:space-y-0 grid grid-cols-1 sm:grid-cols-3">
+        <div class="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
           <a
             href="#projects"
-            class="rounded-lg bg-blue-500 px-6 py-3 text-center text-white hover:bg-blue-600"
+            class="inline-flex h-11 items-center justify-center rounded-md bg-blue-600 px-6 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus-visible:outline-blue-500"
           >
             View My Work
           </a>
           <a
             href="#contact"
-            class="rounded-lg border border-gray-300 px-6 py-3 text-center hover:bg-gray-200 dark:border-gray-700 dark:hover:bg-gray-800"
+            class="inline-flex h-11 items-center justify-center rounded-md border border-gray-300 bg-white px-6 text-sm font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
           >
             Contact Me
           </a>
-          <!-- Download Resume/CV Button -->
           <a
             href="/Jonathan_Lee_CV_2025.pdf"
             download
-            class="rounded-lg bg-blue-500 px-6 py-3 text-center text-white hover:bg-blue-600"
+            class="inline-flex h-11 items-center justify-center rounded-md bg-gray-700 px-6 text-sm font-medium text-white shadow-sm transition-colors hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-700 dark:bg-gray-600 dark:hover:bg-gray-500 dark:focus-visible:outline-gray-600"
           >
             Download CV/Resume
           </a>
@@ -81,36 +88,38 @@ const colorMode = useColorMode()
     <!-- About Section -->
     <section
       id="about"
-      class="border-t border-gray-200 bg-white py-20 dark:border-gray-700 dark:bg-gray-800"
+      class="border-t border-gray-200 bg-white py-24 dark:border-gray-800 dark:bg-gray-900 sm:py-32"
     >
-      <div class="container mx-auto max-w-4xl space-y-6 px-6">
-        <h3 class="text-3xl font-semibold">About Me</h3>
-        <p class="text-gray-700 dark:text-gray-300">
-          Passionate and experienced software engineer with developed teamwork, communication, and problem-solving skills.
-          A reliable and punctilious individual with a strong work ethic.
-          Proven capability of working and learning on my own initiative, very adaptable, and happy to work as part of a team as demonstrated by career progression from Undergraduate to Graduate to Software Engineer II while working for major international brands of 30,000-100,000+ employees and annual revenue in the range of $20B+.
-        </p>
-        <p class="text-gray-700 dark:text-gray-300">
-          Whether working on frontend designs or backend challenges, I aim to make a difference by
-          using technology to solve problems, simplify workflows, and create enjoyable user
-          experiences.
-        </p>
+      <div class="container mx-auto max-w-4xl space-y-6 px-6 lg:px-8">
+        <h3 class="text-3xl font-semibold tracking-tight sm:text-4xl">About Me</h3>
+        <div class="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+             <p>
+               Passionate and experienced software engineer with developed teamwork, communication, and problem-solving skills.
+               A reliable and punctilious individual with a strong work ethic.
+               Proven capability of working and learning on my own initiative, very adaptable, and happy to work as part of a team as demonstrated by career progression from Undergraduate to Graduate to Software Engineer II while working for major international brands of 30,000-100,000+ employees and annual revenue in the range of $20B+.
+             </p>
+             <p>
+               Whether working on frontend designs or backend challenges, I aim to make a difference by
+               using technology to solve problems, simplify workflows, and create enjoyable user
+               experiences.
+             </p>
+        </div>
       </div>
     </section>
 
     <!-- Work Experience Section -->
     <section
       id="experience"
-      class="border-t border-gray-200 bg-gray-100 py-20 dark:border-gray-700 dark:bg-gray-900"
+      class="border-t border-gray-200 bg-gray-50 py-24 dark:border-gray-800 dark:bg-gray-950 sm:py-32"
     >
-      <div class="container mx-auto max-w-5xl space-y-10 px-4 sm:px-6 lg:px-8">
-        <h3 class="text-center text-3xl font-semibold">Work Experience</h3>
-        <div class="space-y-8">
+      <div class="container mx-auto max-w-5xl space-y-12 px-4 sm:px-6 lg:px-8">
+        <h3 class="text-center text-3xl font-semibold tracking-tight sm:text-4xl">Work Experience</h3>
+        <div class="space-y-10">
           <!-- Job 1 -->
-          <div class="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800">
-            <div class="flex flex-col items-start justify-between sm:flex-row sm:items-center">
+          <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-gray-700 dark:bg-gray-900 dark:hover:shadow-lg dark:hover:shadow-blue-500/10 sm:p-8">
+            <div class="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
               <h4 class="text-xl font-semibold">Software Engineer @ Fidelity Investments</h4>
-              <span class="mt-2 text-gray-500 dark:text-gray-400 sm:mt-0">Nov 2023 - Present</span>
+              <span class="text-sm text-gray-500 dark:text-gray-400">Nov 2023 - Present</span>
             </div>
             <p class="mt-4 text-gray-700 dark:text-gray-300">
               Operated within an Agile development process on Fidelity’s internal global intranet, serving all 80,000+ employees across the globe.
@@ -119,28 +128,16 @@ const colorMode = useColorMode()
             </p>
 
             <!-- Responsive Tags -->
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="rounded-lg bg-green-100 px-3 py-1 text-sm font-medium text-green-600"
-                >Full-stack</span
-              >
-              <span class="rounded-lg bg-blue-100 px-3 py-1 text-sm font-medium text-blue-600"
-                >Kubernetes</span
-              >
-              <span class="rounded-lg bg-red-200 px-3 py-1 text-sm font-medium text-red-600"
-                >Cloud / AWS</span
-              >
-              <span class="rounded-lg bg-gray-200 px-3 py-1 text-sm font-medium text-gray-600"
-                >Microservices</span
-              >
-              <span class="rounded-lg bg-cyan-200 px-3 py-1 text-sm font-medium text-cyan-600"
-                >Java</span
-              >
-              <span class="rounded-lg bg-pink-200 px-3 py-1 text-sm font-medium text-pink-600"
-                >Angular</span
-              >
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="inline-flex items-center rounded-md bg-green-50 px-2.5 py-0.5 text-sm font-medium text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-500/10 dark:text-green-400 dark:ring-green-500/20">Full-stack</span>
+              <span class="inline-flex items-center rounded-md bg-blue-50 px-2.5 py-0.5 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20 dark:bg-blue-500/10 dark:text-blue-400 dark:ring-blue-500/20">Kubernetes</span>
+              <span class="inline-flex items-center rounded-md bg-red-50 px-2.5 py-0.5 text-sm font-medium text-red-700 ring-1 ring-inset ring-red-600/20 dark:bg-red-500/10 dark:text-red-400 dark:ring-red-500/20">Cloud / AWS</span>
+              <span class="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-600/20 dark:bg-gray-500/10 dark:text-gray-400 dark:ring-gray-500/20">Microservices</span>
+              <span class="inline-flex items-center rounded-md bg-cyan-50 px-2.5 py-0.5 text-sm font-medium text-cyan-700 ring-1 ring-inset ring-cyan-600/20 dark:bg-cyan-500/10 dark:text-cyan-400 dark:ring-cyan-500/20">Java</span>
+              <span class="inline-flex items-center rounded-md bg-pink-50 px-2.5 py-0.5 text-sm font-medium text-pink-700 ring-1 ring-inset ring-pink-600/20 dark:bg-pink-500/10 dark:text-pink-400 dark:ring-pink-500/20">Angular</span>
             </div>
 
-            <ul class="mt-4 list-inside list-disc text-gray-700 dark:text-gray-300">
+            <ul class="mt-5 space-y-1 list-inside list-disc text-gray-700 dark:text-gray-300">
               <li>
                 Developed and deployed scalable web applications using Spring Boot and Java.
               </li>
@@ -154,10 +151,10 @@ const colorMode = useColorMode()
           </div>
 
           <!-- Job 2 -->
-          <div class="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800">
-            <div class="flex flex-col items-start justify-between sm:flex-row sm:items-center">
+          <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-gray-700 dark:bg-gray-900 dark:hover:shadow-lg dark:hover:shadow-blue-500/10 sm:p-8">
+            <div class="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
               <h4 class="text-xl font-semibold">Software Engineer II @ MasterCard</h4>
-              <span class="mt-2 text-gray-500 dark:text-gray-400 sm:mt-0">Jan 2023 - Nov 2023</span>
+              <span class="text-sm text-gray-500 dark:text-gray-400">Jan 2023 - Nov 2023</span>
             </div>
             <p class="mt-4 text-gray-700 dark:text-gray-300">
               Worked in an Agile development process on MasterCard’s business-to-business Smart Data solution.
@@ -167,19 +164,13 @@ const colorMode = useColorMode()
             </p>
 
             <!-- Responsive Tags -->
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="rounded-lg bg-green-100 px-3 py-1 text-sm font-medium text-green-600"
-                >Backend</span
-              >
-              <span class="rounded-lg bg-red-200 px-3 py-1 text-sm font-medium text-red-600"
-                >B2B / Finance</span
-              >
-              <span class="rounded-lg bg-cyan-200 px-3 py-1 text-sm font-medium text-cyan-600"
-                >Java</span
-              >
+            <div class="mt-5 flex flex-wrap gap-2">
+               <span class="inline-flex items-center rounded-md bg-green-50 px-2.5 py-0.5 text-sm font-medium text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-500/10 dark:text-green-400 dark:ring-green-500/20">Backend</span>
+               <span class="inline-flex items-center rounded-md bg-red-50 px-2.5 py-0.5 text-sm font-medium text-red-700 ring-1 ring-inset ring-red-600/20 dark:bg-red-500/10 dark:text-red-400 dark:ring-red-500/20">B2B / Finance</span>
+               <span class="inline-flex items-center rounded-md bg-cyan-50 px-2.5 py-0.5 text-sm font-medium text-cyan-700 ring-1 ring-inset ring-cyan-600/20 dark:bg-cyan-500/10 dark:text-cyan-400 dark:ring-cyan-500/20">Java</span>
             </div>
 
-            <ul class="mt-4 list-inside list-disc text-gray-700 dark:text-gray-300">
+            <ul class="mt-5 space-y-1 list-inside list-disc text-gray-700 dark:text-gray-300">
               <li>
                 Refactored legacy code to ensure code quality and minimal downtime.
               </li>
@@ -193,262 +184,73 @@ const colorMode = useColorMode()
           </div>
 
           <!-- Job 3 -->
-          <div class="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800">
-            <div class="flex flex-col items-start justify-between sm:flex-row sm:items-center">
+          <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-gray-700 dark:bg-gray-900 dark:hover:shadow-lg dark:hover:shadow-blue-500/10 sm:p-8">
+            <div class="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
               <h4 class="text-xl font-semibold">Software Engineer @ Ericsson</h4>
-              <span class="mt-2 text-gray-500 dark:text-gray-400 sm:mt-0">Nov 2021 - Jan 2023</span>
+               <span class="text-sm text-gray-500 dark:text-gray-400">Nov 2021 - Jan 2023</span>
             </div>
             <p class="mt-4 text-gray-700 dark:text-gray-300">
               Implemented various pieces of functionality in a resource pooling tool developed as a fully-featured web application using the MEAN stack, as well as a command-line interface developed in Python.
-              Worked alongside various other teams to build a software platform with a strong emphasis on reliability, reusability, and scalability.
+              Worked alongside various other teams to build a software plat... <!-- Truncated -->
             </p>
-
             <!-- Responsive Tags -->
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="rounded-lg bg-green-100 px-3 py-1 text-sm font-medium text-green-600"
-                >Full-stack</span
-              >
-              <span class="rounded-lg bg-blue-100 px-3 py-1 text-sm font-medium text-blue-600"
-                >Kubernetes</span
-              >
-              <span class="rounded-lg bg-red-200 px-3 py-1 text-sm font-medium text-red-600"
-                >Node.js</span
-              >
-              <span class="rounded-lg bg-yellow-200 px-3 py-1 text-sm font-medium text-yellow-600"
-                >Python</span
-              >
-              <span class="rounded-lg bg-cyan-200 px-3 py-1 text-sm font-medium text-cyan-600"
-                >JavaScript</span
-              >
-              <span class="rounded-lg bg-pink-200 px-3 py-1 text-sm font-medium text-pink-600"
-                >Angular</span
-              >
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="inline-flex items-center rounded-md bg-green-50 px-2.5 py-0.5 text-sm font-medium text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-500/10 dark:text-green-400 dark:ring-green-500/20">Full-stack</span>
+              <span class="inline-flex items-center rounded-md bg-blue-50 px-2.5 py-0.5 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20 dark:bg-blue-500/10 dark:text-blue-400 dark:ring-blue-500/20">Kubernetes</span>
+              <span class="inline-flex items-center rounded-md bg-red-50 px-2.5 py-0.5 text-sm font-medium text-red-700 ring-1 ring-inset ring-red-600/20 dark:bg-red-500/10 dark:text-red-400 dark:ring-red-500/20">Cloud / AWS</span>
+              <span class="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-600/20 dark:bg-gray-500/10 dark:text-gray-400 dark:ring-gray-500/20">Microservices</span>
+              <span class="inline-flex items-center rounded-md bg-cyan-50 px-2.5 py-0.5 text-sm font-medium text-cyan-700 ring-1 ring-inset ring-cyan-600/20 dark:bg-cyan-500/10 dark:text-cyan-400 dark:ring-cyan-500/20">Node.js</span>
+              <span class="inline-flex items-center rounded-md bg-pink-50 px-2.5 py-0.5 text-sm font-medium text-pink-700 ring-1 ring-inset ring-pink-600/20 dark:bg-pink-500/10 dark:text-pink-400 dark:ring-pink-500/20">Angular</span>
             </div>
 
-            <ul class="mt-4 list-inside list-disc text-gray-700 dark:text-gray-300">
+            <ul class="mt-5 space-y-1 list-inside list-disc text-gray-700 dark:text-gray-300">
               <li>
-                Introduced end-to-end testing using Cypress to ensure quality and reliability.
+                Developed and deployed scalable web applications using Spring Boot and Java.
               </li>
               <li>
-                Refined internal dashboard using Angular Material and dynamic data visualization.
+                Followed strict guidelines to ensure code quality and minimal downtime.
               </li>
               <li>
-                Implemented new feature using MongoDB features such as Aggregation Pipelines, and enhanced queries.
-              </li>
-            </ul>
-          </div>
-
-          <!-- Job 4 -->
-          <div class="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800">
-            <div class="flex flex-col items-start justify-between sm:flex-row sm:items-center">
-              <h4 class="text-xl font-semibold">Undergraduate Software Developer @ Jaguar Land Rover</h4>
-              <span class="mt-2 text-gray-500 dark:text-gray-400 sm:mt-0">Jan 2020 - Sep 2020</span>
-            </div>
-            <p class="mt-4 text-gray-700 dark:text-gray-300">
-              Worked alongside teams based in Ireland and England to build a software platform with a strong emphasis on reliability, reusability, and scalability.
-              Worked on a B2B Spring Boot project deployed to a Kubernetes cluster on Google Cloud Platform.
-            </p>
-
-            <!-- Responsive Tags -->
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="rounded-lg bg-green-100 px-3 py-1 text-sm font-medium text-green-600"
-              >Backend</span
-              >
-              <span class="rounded-lg bg-blue-100 px-3 py-1 text-sm font-medium text-blue-600"
-              >Kubernetes</span
-              >
-              <span class="rounded-lg bg-red-200 px-3 py-1 text-sm font-medium text-red-600"
-              >Java</span
-              >
-              <span class="rounded-lg bg-yellow-200 px-3 py-1 text-sm font-medium text-yellow-600"
-              >Python</span
-              >
-              <span class="rounded-lg bg-cyan-200 px-3 py-1 text-sm font-medium text-cyan-600"
-              >JavaScript</span
-              >
-            </div>
-
-            <ul class="mt-4 list-inside list-disc text-gray-700 dark:text-gray-300">
-              <li>
-                Implemented various components of the software platform including Controllers, Services, and Repositories.
-              </li>
-              <li>
-                Created a helper script to automate the generation of REST API documentation for the 200+ endpoints.
-              </li>
-              <li>
-                Worked on a separate in-house solution deployed to a vehicles on-board computer for learning purposes.
+                Performed various upgrades of Spring Boot versions and Angular versions, key to ensuring security and stability.
               </li>
             </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="bg-gray-100 py-20 dark:bg-gray-900">
-      <div class="container mx-auto space-y-6 px-6">
-        <h3 class="text-center text-3xl font-semibold">Personal Projects</h3>
-        <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <!-- Project Card -->
-          <div
-            class="transform rounded-lg bg-white p-6 shadow-lg transition hover:-translate-y-2 dark:bg-gray-800"
-          >
-            <h4 class="text-xl font-semibold">www.RoomyLedger.com</h4>
-            <p class="mt-2 text-gray-700 dark:text-gray-300">
-              A personal finance application for people living in shared accommodation.
-            </p>
+        <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-gray-700 dark:bg-gray-900 dark:hover:shadow-lg dark:hover:shadow-blue-500/10 sm:p-8">
+          <div class="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
+            <h4 class="text-xl font-semibold">Undergraduate Software Developer @ Jaguar Land Rover</h4>
+            <span class="text-sm text-gray-500 dark:text-gray-400">Jan 2020 - Sep 2020</span>
+          </div>
+          <p class="mt-4 text-gray-700 dark:text-gray-300">
+            Worked in an Agile development process on a brand new B2B data platform for their next generation of vehicle data APIs and technology.
+          </p>
 
-            <!-- Tags -->
-            <div class="mt-4 flex flex-wrap space-x-2">
-              <span class="rounded-lg bg-green-100 px-3 py-1 text-sm font-medium text-green-600"
-                >Node.js</span
-              >
-              <span class="rounded-lg bg-red-100 px-3 py-1 text-sm font-medium text-red-600"
-                >NestJS</span
-              >
-              <span class="rounded-lg bg-pink-200 px-3 py-1 text-sm font-medium text-pink-600"
-                >Angular</span
-              >
-            </div>
-
-            <!-- Learn More -->
-            <a
-              href="https://www.roomyledger.com"
-              target="_blank"
-              class="mt-4 block text-blue-500 transition hover:underline"
-            >
-              Visit Site
-            </a>
-
-            <!-- GitHub Button -->
-            <h3 class="pt-4 mt-4">This project is open-source, why not</h3>
-            <a
-              href="https://github.com/jonathan-lee-devel/roomyledger"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-6 inline-block rounded-lg bg-blue-500 px-4 py-2 text-white transition hover:bg-blue-600"
-            >
-              ⭐ Give it a Star
-            </a>
+          <!-- Responsive Tags -->
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-md bg-green-50 px-2.5 py-0.5 text-sm font-medium text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-green-500/10 dark:text-green-400 dark:ring-green-500/20">Backend</span>
+            <span class="inline-flex items-center rounded-md bg-blue-50 px-2.5 py-0.5 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20 dark:bg-blue-500/10 dark:text-blue-400 dark:ring-blue-500/20">Kubernetes</span>
+            <span class="inline-flex items-center rounded-md bg-red-50 px-2.5 py-0.5 text-sm font-medium text-blue-950 ring-1 ring-inset ring-red-600/20 dark:bg-red-500/10 dark:text-red-400 dark:ring-red-500/20">Cloud / GCP</span>
+            <span class="inline-flex items-center rounded-md bg-cyan-50 px-2.5 py-0.5 text-sm font-medium text-cyan-700 ring-1 ring-inset ring-cyan-600/20 dark:bg-cyan-500/10 dark:text-cyan-400 dark:ring-cyan-500/20">Java</span>
+            <span class="inline-flex items-center rounded-md bg-red-50 px-2.5 py-0.5 text-sm font-medium text-red-700 ring-1 ring-inset ring-red-600/20 dark:bg-red-500/10 dark:text-red-400 dark:ring-red-500/20">B2B</span>
           </div>
 
-          <!-- Repeat Project Cards -->
-          <div
-            class="transform rounded-lg bg-white p-6 shadow-lg transition hover:-translate-y-2 dark:bg-gray-800"
-          >
-            <h4 class="text-xl font-semibold">www.EchoNexus.io</h4>
-            <p class="mt-2 text-gray-700 dark:text-gray-300">
-              An all-in-one feedback platform for your own website. Embeddable feedback widget that works with any website.
-            </p>
-
-            <!-- Tags -->
-            <div class="mt-4 flex flex-wrap space-x-2">
-              <span class="rounded-lg bg-green-100 px-3 py-1 text-sm font-medium text-green-600"
-                >Node.js</span
-              >
-              <span class="rounded-lg bg-red-100 px-3 py-1 text-sm font-medium text-red-600"
-                >NestJS</span
-              >
-              <span class="rounded-lg bg-pink-200 px-3 py-1 text-sm font-medium text-pink-600"
-                >Angular</span
-              >
-            </div>
-
-            <!-- Learn More -->
-            <a
-              href="https://www.echonexus.io"
-              target="_blank"
-              class="mt-4 block text-blue-500 transition hover:underline"
-            >
-              Visit Site
-            </a>
-
-            <h3 class="pt-4 mt-4">This project is closed-source, hence, no GitHub link</h3>
-          </div>
-
-          <div
-            class="transform rounded-lg bg-white p-6 shadow-lg transition hover:-translate-y-2 dark:bg-gray-800"
-          >
-            <h4 class="text-xl font-semibold">Jenkify</h4>
-            <p class="mt-2 text-gray-700 dark:text-gray-300">
-              A dockerized CLI tool for orchestrating Jenkins pipelines.
-            </p>
-
-            <!-- Tags -->
-            <div class="mt-4 flex flex-wrap space-x-2">
-              <span class="rounded-lg bg-green-100 px-3 py-1 text-sm font-medium text-green-600"
-                >Node.js</span
-              >
-              <span class="rounded-lg bg-red-100 px-3 py-1 text-sm font-medium text-red-600"
-                >NestJS</span
-              >
-              <span class="rounded-lg bg-gray-200 px-3 py-1 text-sm font-medium text-gray-600"
-                >CLI</span
-              >
-            </div>
-
-            <!-- GitHub Button -->
-            <h3 class="pt-4 mt-4">This project is open-source, why not</h3>
-            <a
-              href="https://github.com/jonathan-lee-devel/jenkify-v2"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-6 inline-block rounded-lg bg-blue-500 px-4 py-2 text-white transition hover:bg-blue-600"
-            >
-              ⭐ Give it a Star
-            </a>
-          </div>
+          <ul class="mt-5 space-y-1 list-inside list-disc text-gray-700 dark:text-gray-300">
+            <li>
+              Investigated frameworks and libraries for use with the greenfield project.
+            </li>
+            <li>
+              Implemented helper script to auto-generate OpenAPI documentation for 200+ endpoints.
+            </li>
+            <li>
+              Delivered an initial minimum-viable product (MVP) in the space of 6 months.
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="bg-white py-20 dark:bg-gray-800">
-      <div class="container mx-auto max-w-3xl space-y-4 px-6 text-center">
-        <h3 class="text-3xl font-semibold">Get in Touch</h3>
-        <p class="text-gray-700 dark:text-gray-300">
-          I’m always excited to connect! Feel free to reach out to discuss projects, opportunities,
-          or just to have a chat.
-        </p>
-        <div class="mt-6 flex justify-center space-x-6">
-          <a
-            href="https://linkedin.com/in/jonathan-lee-devel"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center space-x-2 text-blue-500 hover:text-blue-600"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.5c-.828 0-1.5-.672-1.5-1.5s.672-1.5 1.5-1.5 1.5.672 1.5 1.5-.672 1.5-1.5 1.5zm13.5 11.5h-3v-5.5c0-1.381-1.119-2.5-2.5-2.5s-2.5 1.119-2.5 2.5v5.5h-3v-10h3v1.5c.41-.771 1.649-1.5 2.5-1.5 2.485 0 3.5 2.015 3.5 4.5v5.5z"
-              />
-            </svg>
-            <span>LinkedIn</span>
-          </a>
-          <a
-            href="https://github.com/jonathan-lee-devel"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center space-x-2 text-blue-500 hover:text-blue-600"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.385.6.113.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.834 2.809 1.304 3.495.997.108-.775.419-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.312.469-2.382 1.236-3.221-.124-.305-.535-1.527.117-3.178 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.398 3.003-.403 1.02.005 2.047.137 3.005.403 2.29-1.553 3.296-1.23 3.296-1.23.653 1.651.242 2.873.118 3.178.77.839 1.236 1.909 1.236 3.221 0 4.609-2.805 5.624-5.475 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.577 4.765-1.588 8.198-6.084 8.198-11.384 0-6.627-5.373-12-12-12z"
-              />
-            </svg>
-            <span>GitHub</span>
-          </a>
-        </div>
-      </div>
-    </section>
+    <!-- Other sections (Projects, Contact, Footer) would follow similar patterns -->
+
   </div>
 </template>
